@@ -1,0 +1,32 @@
+{% extends "ktuh/base_site.html" %}
+{% load markup %}
+
+{% block title %}<title> {{ show.showgrid_dj.dj_current_show.show_name }} </title> {% endblock %}
+
+{% block breadcrumbs %}
+<div id="pathway_col">
+  <div class="pathway">
+   <span class="breadcrumbs pathway">
+   	<a href="../../">Home</a>
+      &rsaquo; 
+      <a href="../">Show Grid</a>
+      &rsaquo;
+      {% if show %}
+      {{ show.showgrid_dj.dj_current_show.show_name }}
+      {% else %} Open {% endif %}
+   </span>
+  </div>
+  <div class="clr"></div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+Host:  {{ show.showgrid_dj.dj_name }} <br/>
+Show Name:  {{ show.showgrid_dj.dj_current_show.show_name }} <br/>
+Dj's Email: {{ show.showgrid_dj.dj_email }} <br/>
+Dj's Website: <a href="{{ show.showgrid_dj.dj_website }}">
+{{ show.showgrid_dj.dj_website }}</a> <br/>
+Show Description: {{ show.showgrid_dj.dj_current_show.show_description|markdown }} <br/>
+
+{% endblock %}

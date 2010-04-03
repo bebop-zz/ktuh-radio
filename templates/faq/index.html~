@@ -1,0 +1,34 @@
+{% extends "ktuh/base_site.html" %}
+{% load markup %}
+
+
+{% block title %}<title> KTUH FAQ'S </title> {% endblock %}
+
+{% block breadcrumbs %}
+<div id="pathway_col">
+  <div class="pathway">
+    <span class="breadcrumbs pathway">
+      <a href="../">Home</a>
+      &rsaquo; 
+      Faq's
+    </span>
+  </div>
+  <div class="clr"></div>
+</div>
+{% endblock %}
+
+{% block content %}
+<table class="contentpaneopen">
+  <td class="contentheading" width="100%"> 
+    KTUH FAQ'S 
+  </td>
+</table>
+<br/>
+
+{% for faq in faqs %}
+<li>
+  <a href="/ktuh/faq/{{ faq.id }}">{{ faq.faq_title }}</a><br/>
+</li>
+{% endfor %}
+
+{% endblock %}

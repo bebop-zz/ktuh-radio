@@ -1,0 +1,26 @@
+{% extends "ktuh/base_site.html" %}
+{% load markup %}
+
+
+{% block title %}<title> {{ show.showgrid_dj.dj_current_show.show_name }} </title> {% endblock %}
+
+{% block breadcrumbs %}
+<div id="pathway_col">
+  <div class="pathway">
+   <span class="breadcrumbs pathway">
+   	<a href="../">Home</a>
+      &rsaquo; 
+      Music
+   </span>
+  </div>
+  <div class="clr"></div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{% for chart in charts %}
+<a href="/ktuh/music/{{ chart.id }}">Week of {{ chart.charts_date }}</a><br/>
+{% endfor %}
+
+{% endblock %}

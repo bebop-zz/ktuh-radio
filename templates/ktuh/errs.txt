@@ -1,0 +1,71 @@
+line 416 column 1 - Warning: plain text isn't allowed in <table> elements
+line 413 column 1 - Info: <table> previously mentioned
+line 473 column 4 - Warning: missing </strong> before </td>
+line 567 column 114 - Warning: replacing invalid character code 128
+line 567 column 115 - Warning: replacing invalid character code 147
+line 567 column 124 - Warning: replacing invalid character code 128
+line 567 column 125 - Warning: replacing invalid character code 147
+line 663 column 1 - Warning: plain text isn't allowed in <table> elements
+line 407 column 121 - Info: <table> previously mentioned
+line 21 column 25 - Warning: <table> lacks "summary" attribute
+line 106 column 33 - Warning: <table> lacks "summary" attribute
+line 169 column 1 - Warning: <iframe> attribute "name" lacks value
+line 169 column 1 - Warning: <iframe> attribute "align" has invalid value "top"
+line 188 column 104 - Warning: <table> lacks "summary" attribute
+line 253 column 1 - Warning: <table> lacks "summary" attribute
+line 268 column 1 - Warning: <table> lacks "summary" attribute
+line 387 column 9 - Warning: <table> lacks "summary" attribute
+line 394 column 9 - Warning: <table> lacks "summary" attribute
+line 407 column 121 - Warning: <table> lacks "summary" attribute
+line 413 column 1 - Warning: <table> lacks "summary" attribute
+line 424 column 1 - Warning: <table> lacks "summary" attribute
+line 448 column 17 - Warning: <table> lacks "summary" attribute
+line 452 column 1 - Warning: <table> lacks "summary" attribute
+line 464 column 1 - Warning: <table> lacks "summary" attribute
+line 472 column 12 - Warning: <img> lacks "alt" attribute
+line 488 column 1 - Warning: <table> lacks "summary" attribute
+line 500 column 1 - Warning: <table> lacks "summary" attribute
+line 525 column 1 - Warning: <table> lacks "summary" attribute
+line 534 column 1 - Warning: <table> lacks "summary" attribute
+line 594 column 1 - Warning: <table> lacks "summary" attribute
+line 607 column 1 - Warning: <table> lacks "summary" attribute
+line 434 column 1 - Warning: trimming empty <p>
+line 435 column 1 - Warning: trimming empty <p>
+line 471 column 48 - Warning: trimming empty <strong>
+line 473 column 4 - Warning: trimming empty <strong>
+line 473 column 1 - Warning: trimming empty <p>
+line 614 column 4 - Warning: trimming empty <span>
+line 614 column 1 - Warning: trimming empty <p>
+line 169 column 1 - Warning: <iframe> id and name attribute value mismatch
+Info: Doctype given is "-//W3C//DTD XHTML 1.0 Transitional//EN"
+Info: Document content looks like XHTML 1.0 Transitional
+37 warnings, 0 errors were found!
+
+Character codes 128 to 159 (U+0080 to U+009F) are not allowed in HTML;
+even if they were, they would likely be unprintable control characters.
+Tidy assumed you wanted to refer to a character with the same byte value in the 
+specified encoding and replaced that reference with the Unicode equivalent.
+
+The table summary attribute should be used to describe
+the table structure. It is very helpful for people using
+non-visual browsers. The scope and headers attributes for
+table cells are useful for specifying which headers apply
+to each table cell, enabling non-visual browsers to provide
+a meaningful context for each cell.
+
+The alt attribute should be used to give a short description
+of an image; longer descriptions should be given with the
+longdesc attribute which takes a URL linked to the description.
+These measures are needed for people using non-graphical browsers.
+
+For further advice on how to make your pages accessible
+see http://www.w3.org/WAI/GL.
+. You may also want to try
+"http://www.cast.org/bobby/" which is a free Web-based
+service for checking URLs for accessibility.
+
+To learn more about HTML Tidy see http://tidy.sourceforge.net
+Please fill bug reports and queries using the "tracker" on the Tidy web site.
+Additionally, questions can be sent to html-tidy@w3.org
+HTML and CSS specifications are available from http://www.w3.org/
+Lobby your company to join W3C, see http://www.w3.org/Consortium

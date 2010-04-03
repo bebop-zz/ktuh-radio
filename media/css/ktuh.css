@@ -1,0 +1,56 @@
+* {font-family: Arial, Helvetica, Sans Serif;}
+
+/** Main Page **/
+body {
+  clear: left;
+  background: #333333;
+  margin: 20px;
+  padding: 20px;
+}
+#header {
+  background: #333;
+  width: 100%;
+  float: top;
+  background: transparent url(/media/images/header_img_bg.jpg) top left no-repeat;
+  height: 160px;
+}
+#menu {
+  float: left;
+  width:100%
+  clear: top;
+  padding: 10px;
+}
+#leftcol {
+  color: white;
+  font-size: 12px;
+  clear: left;
+  float: left;
+  width: 19%;
+}
+#content {
+  float: left;
+  width: 80%;
+}
+#footer {
+  font-size: 8pt;
+  text-align: center;
+  color: #FFFFFF;
+  font-weight: normal;
+  clear: both;
+  width: 100%;
+}
+
+/** Schedule Stuff **/
+table.schedule td{
+  padding: 5px;
+  border: solid #336600 1px;       /**Dark Green**/
+}
+
+.brownbg{
+  background-color: #cccc99; /**Brown-grey**/
+}
+
+.greybg{
+  font-size: 12px;
+  background-color: #E0E0E0; /**Grey**/
+}

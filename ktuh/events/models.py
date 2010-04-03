@@ -1,0 +1,15 @@
+from django.db import models
+
+# Create your models here.
+from django.db import models
+from tinymce import models as tinymce_models
+import datetime
+
+class Event(models.Model):
+	event_date = models.DateTimeField(blank=True, null=True)
+	event_title = models.CharField(max_length=255)
+	event_detail = tinymce_models.HTMLField()
+	event_brief = tinymce_models.HTMLField()
+
+	def __unicode__(self):
+		return self.event_title

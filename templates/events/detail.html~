@@ -1,0 +1,26 @@
+{% extends "ktuh/base_site.html" %}
+{% load markup %}
+
+{% block title %}<title> {{ show.showgrid_dj.dj_current_show.show_name }} </title> {% endblock %}
+
+{% block breadcrumbs %}
+<div id="pathway_col">
+  <div class="pathway">
+   <span class="breadcrumbs pathway">
+   	<a href="../../">Home</a>
+      &rsaquo; 
+      <a href="../">Events</a>
+      &rsaquo;
+      {{ event.event_title }}
+   </span>
+  </div>
+  <div class="clr"></div>
+</div>
+{% endblock %}
+
+{% block content %}
+<table class="contentpaneopen">
+{{ event.event_detail|markdown }}
+</table>
+
+{% endblock %}

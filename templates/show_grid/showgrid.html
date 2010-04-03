@@ -1,0 +1,196 @@
+{% extends "ktuh/base_site.html" %}
+
+{% block title %}<title>Show Schedule</title>{% endblock %}
+
+{% block breadcrumbs %}
+<div id="pathway_col">
+  <div class="pathway">
+    <span class="breadcrumbs pathway"><a href="../">Home</a>
+      &rsaquo; 
+      Show Grid
+    </span>
+  </div>
+  <div class="clr"></div>
+</div>
+{% endblock %}
+
+{% block content %}
+<table class="contentpaneopen"> 
+  
+  <tr> 
+    <td valign="top"> 
+      <table class="schedule" style="border-collapse: collapse" border="0"> 
+	<tbody> 
+	  <tr class="brownbg"> 
+	    <td style="width: 40px;"><strong>AM</strong></td> 
+	    <td><strong>Sun</strong></td> 
+	    <td><strong>Mon</strong></td> 
+	    <td><strong>Tues</strong></td> 
+	    <td><strong>Wed</strong></td> 
+	    <td><strong>Thurs</strong></td> 
+	    <td><strong>Fri</strong></td> 
+	    <td><strong>Sat</strong></td> 
+	  </tr> 
+	  <tr> 
+	    <td class="greybg">12 - 3</td>
+	    
+	    <!-- MIDNIGHT TO THREE AM --> 
+	    {% if midnight_list %}{% for show in midnight_list %}
+	    <td>
+	      <a href="{{ show.id }}">
+		{% if show.showgrid_dj.dj_current_show %}
+		<strong>{{ show.showgrid_dj.dj_current_show.show_name }}</strong><br/>
+		<em>{{ show.showgrid_dj.dj_name }}</em>
+		<br/> {{ show.showgrid_dj.dj_current_show.show_blurb }}
+		{% else %}
+		<strong>OPEN</strong>
+		{% endif %}
+	      </a>
+	    </td>
+	    {% endfor %}{% endif %}
+	    
+	    <!-- THREE TO SIX AM --> 
+	  </tr> 
+	  <tr> 
+	    <td class="greybg">3 - 6<br /></td> 
+	    {% if three_list %}{% for show in three_list %}
+	    <td>
+	      <a href="{{ show.id }}">
+		{% if show.showgrid_dj.dj_current_show %}
+		<strong>{{ show.showgrid_dj.dj_current_show.show_name }}</strong><br/>
+		<em>{{ show.showgrid_dj.dj_name }}</em>
+		<br/> {{ show.showgrid_dj.dj_current_show.show_blurb }}
+		{% else %}
+		<strong>OPEN</strong>
+		{% endif %}
+	      </a>
+	    </td>
+	    {% endfor %}{% endif %}
+	  </tr>
+	  
+	  <!-- SIX TO NINE AM --> 
+	  <tr> 
+	    <td class="greybg">6 - 9<br /></td> 
+	    {% if six_list %}{% for show in six_list %}
+	    <td>
+	      <a href="{{ show.id }}">
+		{% if show.showgrid_dj.dj_current_show %}
+		<strong>{{ show.showgrid_dj.dj_current_show.show_name }}</strong><br/>
+		<em>{{ show.showgrid_dj.dj_name }}</em>
+		<br/> {{ show.showgrid_dj.dj_current_show.show_blurb }}
+		{% else %}
+		<strong>OPEN</strong>
+		{% endif %}
+	      </a>
+	    </td>
+	    {% endfor %}{% endif %}
+	  </tr>
+	  
+	  <!-- NINE TO NOON --> 
+	  <tr> 
+	    <td class="greybg">9 - 12<br /></td> 
+	    {% if nine_list %}{% for show in nine_list %}
+	    <td>
+	      <a href="{{ show.id }}">
+		{% if show.showgrid_dj.dj_current_show %}
+		<strong>{{ show.showgrid_dj.dj_current_show.show_name }}</strong><br/>
+		<em>{{ show.showgrid_dj.dj_name }}</em>
+		<br/> {{ show.showgrid_dj.dj_current_show.show_blurb }}
+		{% else %}
+		<strong>OPEN</strong>
+		{% endif %}
+	      </a>
+	    </td>
+	    {% endfor %}{% endif %}
+	  </tr>
+	  
+	  <!-- SEPERATOR --> 
+	  <tr class="brownbg"> 
+	    <td><strong>PM      <br /></strong></td> 
+	    <td><strong>Sun</strong></td> 
+	    <td><strong>Mon</strong></td> 
+	    <td><strong>Tues</strong></td> 
+	    <td><strong>Wed</strong></td> 
+	    <td><strong>Thurs</strong></td> 
+	    <td><strong>Fri</strong></td> 
+	    <td><strong>Sat</strong></td> 
+	  </tr> 
+	  <tr>
+	    
+	    <!-- NOON TO THREE --> 
+	    <td class="greybg">12 - 3<br /></td> 
+	    {% if noon_list %}{% for show in noon_list %}
+	    <td>
+	      <a href="{{ show.id }}">
+		{% if show.showgrid_dj.dj_current_show %}
+		<strong>{{ show.showgrid_dj.dj_current_show.show_name }}</strong><br/>
+		<em>{{ show.showgrid_dj.dj_name }}</em>
+		<br/> {{ show.showgrid_dj.dj_current_show.show_blurb }}
+		{% else %}
+		<strong>OPEN</strong>
+		{% endif %}
+	      </a>
+	    </td>
+	    {% endfor %}{% endif %}
+	  </tr> 
+	  
+	  <!-- THREE TO SIX PM --> 
+	  <tr> 
+	    <td class="greybg">3 - 6</td> 
+	    {% if fifteen_list %}{% for show in fifteen_list %}
+	    <td>
+	      <a href="{{ show.id }}">
+		{% if show.showgrid_dj.dj_current_show %}
+		<strong>{{ show.showgrid_dj.dj_current_show.show_name }}</strong><br/>
+		<em>{{ show.showgrid_dj.dj_name }}</em>
+		<br/> {{ show.showgrid_dj.dj_current_show.show_blurb }}
+		{% else %}
+		<strong>OPEN</strong>
+		{% endif %}
+	      </a>
+	    </td>
+	    {% endfor %}{% endif %}
+	  </tr> 
+	  
+	  <!-- SIX TO NINE PM --> 
+	  <tr> 
+	    <td class="greybg">6 - 9<br /></td> 
+	    {% if eighteen_list %}{% for show in eighteen_list %}
+	    <td>
+	      <a href="{{ show.id }}">
+		{% if show.showgrid_dj.dj_current_show %}
+		<strong>{{ show.showgrid_dj.dj_current_show.show_name }}</strong><br/>
+		<em>{{ show.showgrid_dj.dj_name }}</em>
+		<br/> {{ show.showgrid_dj.dj_current_show.show_blurb }}
+		{% else %}
+		<strong>OPEN</strong>
+		{% endif %}
+	      </a>
+	    </td>
+	    {% endfor %}{% endif %}
+	  </tr> 
+	  
+	  <!-- NINE TO MIDNIGHT PM --> 
+	  <tr> 
+	    <td class="greybg">9 - 12<br /></td> 
+	    {% if twentyone_list %}{% for show in twentyone_list %}
+	    <td>
+	      <a href="{{ show.id }}">
+		{% if show.showgrid_dj.dj_current_show %}
+		<strong>{{ show.showgrid_dj.dj_current_show.show_name }}</strong><br/>
+		<em>{{ show.showgrid_dj.dj_name }}</em>
+		<br/> {{ show.showgrid_dj.dj_current_show.show_blurb }}
+		{% else %}
+		<strong>OPEN</strong>
+		{% endif %}
+	      </a>
+	    </td>
+	    {% endfor %}{% endif %}
+	  </tr> 
+	</tbody> 
+      </table> 
+    </td> 
+  </tr> 
+</table> 
+
+{% endblock %}

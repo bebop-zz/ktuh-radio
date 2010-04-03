@@ -1,0 +1,32 @@
+{% extends "ktuh/base_site.html" %}
+{% load markup %}
+
+{% block title %}<title> {{ faq.faq_title }} </title> {% endblock %}
+
+{% block breadcrumbs %}
+<div id="pathway_col">
+  <div class="pathway">
+   <span class="breadcrumbs pathway">
+   	<a href="../../">Home</a>
+      &rsaquo; 
+      <a href="../">FAQ'S</a>
+      &rsaquo;
+      {{ faq.faq_title  }}
+   </span>
+  </div>
+  <div class="clr"></div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<table class="contentpaneopen">
+  <td class="contentheading" width="100%"> 
+    {{ faq.faq_title }}
+  </td>
+</table>
+<table class="contentpaneopen"> 
+     {{ faq.faq_detail|markdown }}
+</table>
+
+{% endblock %}

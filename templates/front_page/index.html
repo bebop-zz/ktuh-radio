@@ -1,0 +1,151 @@
+{% extends "ktuh/base_site.html" %}
+{% load markup %}
+
+{% block title %}<title>KTUH Hawaii's Only Alternative </title> {% endblock %}
+
+{% block content %}
+<div id="maincolumn_full">
+  <div class="nopad">
+    
+    <table class="blog" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top">
+          <div>
+            <table class="contentpaneopen">
+              <tr>
+                <td class="contentheading" width="100%">
+                  KTUH - Hawaii's Only Alternative - 90.3 FM
+                  Honolulu, Hawaii
+		</td>
+              </tr>
+            </table>
+	    
+            <table class="contentpaneopen">
+              <tr>
+                <td valign="top" colspan="2">
+                  <p>KTUH is a student-run noncommercial
+                    radio station broadcasting from the
+                    University of Hawai`i at Manoa. We
+                    broadcast 24/7 on three frequencies
+                    islandwide, and stream live on the
+                    internet. Since 1969, KTUH has provided
+                    the community with diverse on-air
+                    programming and offered UHM students a
+                    practical chance to learn about radio
+                    broadcasting.</p>
+                </td>
+              </tr>
+            </table>
+	    <span class="article_separator">&nbsp;</span>
+          </div>
+        </td>
+      </tr>
+      
+      <tr>
+        <td valign="top">
+          <table width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td valign="top" width="50%" class="article_column">
+                <table class="contentpaneopen">
+                  <tr>
+                    <td class="contentheading" width="100%">
+		      <a href="/ktuh/events/{{ current_event.id }}" class="contentpagetitle">
+			{{ current_event.event_title }}
+		      </a>
+		    </td>
+                  </tr>
+                </table>
+		
+                <table class="contentpaneopen">
+                  <tr>
+                    <td valign="top" colspan="2">
+                      {{ current_event.event_brief|markdown }}
+                    </td>
+                  </tr>
+		  
+                  <tr>
+                    <td colspan="2">
+		      <a href="/ktuh/events/{{ current_event.id }}" class="readon">
+			Read more...
+		      </a>
+		    </td>
+                  </tr>
+                </table>
+		<span class="article_separator">&nbsp;</span>
+		
+                <table class="contentpaneopen">
+                  <tr>
+                    <td class="contentheading" width="100%">
+		      <a href="/ktuh/faq/{{ current_faq.id }}" class="contentpagetitle">
+			{{ current_faq.faq_title }}
+		      </a>
+		    </td>
+                  </tr>
+                </table>
+		
+                <table class="contentpaneopen">
+                  <tr>
+                    <td valign="top" colspan="2">
+                      {{ current_faq.faq_brief|markdown }}
+                    </td>
+                  </tr>
+		  
+                  <tr>
+                    <td colspan="2">
+		      <a href="/ktuh/faq/{{ current_faq.id }}" class="readon">
+			Read more...
+		      </a>
+		    </td>
+                  </tr>
+                </table>
+		<span class="article_separator">&nbsp;</span>
+              </td>
+	      
+              <td valign="top" width="50%" class="article_column column_separator">
+                <table class="contentpaneopen">
+                  <tr>
+                    <td class="contentheading" width="100%">KTUH Top 10 {{ current_chart.chart_date|date:"D M d Y" }}</td>
+                  </tr>
+                </table>
+		
+                <table class="contentpaneopen">
+                  <tr>
+                    <td valign="right" colspan="1">
+		      {{ current_chart.chart_brief|markdown }}
+		      Click 
+		      <a href="/ktuh/music/{{ current_chart.id }}">
+			<strong>here</strong>
+		      </a> 
+		      for KTUH's the Full Music Chart
+		    </td>
+		  </tr>
+		</table>
+		<span class="article_separator">&nbsp;</span>
+
+		<table class="contentpaneopen">
+                  <tr>
+                    <td class="contentheading" width="100%">
+		      <a href="" class="contentpagetitle">
+			Monday Night Live on Hiatus (But we'll be back soon!)
+		      </a>
+		    </td>
+                  </tr>
+                </table>
+		
+                <table class="contentpaneopen">
+                  <tr>
+                    <td valign="top" colspan="2">
+                      Monday Night Live is currently on hiatus.
+		
+                    </td>
+                  </tr>
+                </table><span class="article_separator">&nbsp;</span>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+{% endblock %}

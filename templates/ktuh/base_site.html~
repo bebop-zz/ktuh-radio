@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=us-ascii" />
+    <meta name="robots" content="index, follow" />
+
+    <title>KTUH - 90.3 - University of Hawaii Radio</title>
+    <link href="/media/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="/media/css/system.css" type="text/css" />
+    <link rel="stylesheet" href="/media/css/template.css" type="text/css" />
+  </head>
+
+  <body class="body_bg">
+    <div id="page_bg">
+    
+      <!-- Logo -->
+      {% block logo %}
+      <div id="logo">
+	<table cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+	      <a href="/ktuh/">
+		KTUH - 90.3 - University of Hawaii Radio
+	      </a>
+	    </td>
+          </tr>
+	</table>
+      </div><!-- /Logo -->
+      {% endblock logo %}
+      
+      <!-- Header -->
+      {% block header %}
+      <div id="header">
+	<div class="header_img">
+          <!-- News -->
+	  
+          <div class="news">
+            <div class="latest">
+              <div class="module">
+		<div>
+                  <div>
+                    <div>
+                      <table class="contentpaneopen">
+			
+			{% block listen_now %}
+			
+			<h3>Who's Playing Now?</h3>
+			{% for show in current_show %} 
+			{% if show %}
+			<a href="/ktuh/show_grid/{{ show.id }}">
+			  {{ show.showgrid_dj.dj_current_show.show_name }}
+			  w/ {{ show.showgrid_dj.dj_name }} <br />
+			  {{ show.showgrid_dj.dj_current_show.show_blurb}}
+			  <br/><br/> 
+			  <a href="{{ show.showgrid_dj.dj_website }}">
+			    Show Website: {{ show.showgrid_dj.dj_website }} </a>
+			</a>
+			{% else %}
+			<a href="http://128.171.65.154:8000/listen.m3u">
+			  Open </a>
+			{% endif %}
+			{% endfor %}
+			{% endblock listen_now %}
+             
+                      </table>
+                    </div>
+                  </div>
+		</div>
+              </div>
+            </div>
+	    
+            <div class="separator"></div>
+	    
+            <div class="popular">
+              <div class="module">
+		<div>
+                  <div>
+                    <div>
+                      <h3>Popular</h3>
+		      
+                      <ul class="mostread">
+			<li class="mostread">
+			  <a href="http://128.171.65.154:8000" class="mostread">
+			    Listen Online via KTUH's Streaming Webcast!
+			  </a>
+			</li>
+                      </ul>
+                    </div>
+                  </div>
+		</div>
+              </div>
+            </div>
+	    
+            <div class="clr"></div>
+          </div>
+	  
+          <div class="clr"></div><!-- /News -->
+	</div><!-- Pillmenu -->
+	
+	<div id="pillmenu">
+          <!-- User Help: Center menu replace float: left; or float: right; with : margin: 0 auto;  -->
+	  
+          <table cellspacing="0" cellpadding="0" style="float: left;">
+            <tr>
+              <td>
+		<ul id="mainlevel-nav">
+                <li>
+		  <a href="/ktuh/" class="mainlevel-nav" id="active_menu-nav" name="active_menu-nav">
+		    Home
+		  </a>
+		</li>
+
+                <li>
+		  <a href="/ktuh/show_grid/" class="mainlevel-nav">
+		    Shows
+		  </a>
+		</li>
+
+                <li>
+		  <a href="/ktuh/listen_now" class="mainlevel-nav">
+		    Listen Now
+		  </a>
+		</li>
+
+                <li>
+		  <a href="/ktuh/music" class="mainlevel-nav">
+		    Music Charts
+		  </a>
+		</li>
+
+                <li>
+		  <a href="/ktuh/anniversary" class="mainlevel-nav">
+		    40th Anniversary
+		  </a>
+		</li>
+
+                <li>
+		  <a href="/ktuh/events" class="mainlevel-nav">
+		    Events
+		  </a>
+		</li>
+
+                <li>
+		  <a href="/ktuh/donate" class="mainlevel-nav">
+		    Donate
+		  </a>
+		</li>
+
+                <li>
+		  <a href="/ktuh/sticker" class="mainlevel-nav">
+		    Get a KTUH Sticker
+		  </a>
+		</li>
+		</ul>
+              </td>
+            </tr>
+          </table>
+
+          <div class="clr"></div>
+	</div> <!-- /Pillmenu -->
+      </div><!-- /Header --><!-- Pathway col -->
+      {% endblock header %}
+      
+      {% block breadcrumbs %}
+      <div id="pathway_col">
+	<div class="pathway">
+          <span class="breadcrumbs pathway">Home</span>
+	</div>
+	<div class="clr"></div>
+      </div><!-- /Pathway col --><!-- Wrapper -->
+      {% endblock breadcrumbs %}
+      
+      <div id="wrapper">
+	<div id="content">
+          <div id="leftcolumn">
+            <div class="module">
+              <div>
+		<div>
+                  <h3>Current Time</h3>
+                  <div>
+                    {{ current_time }}
+                  </div>
+		</div>
+              </div>
+            </div>
+	    
+            <div class="module">
+              <div>
+		<div>
+                  <div>
+                    <h3>Latest Events</h3>
+		    
+                    <div class="mod_events_latest_callink">
+                      <a href="/ktuh/events">
+			View Full Calendar
+		      </a>
+                    </div>
+		    
+		    <!-- TODO: We should build a current events list here  -->
+                  </div>
+		</div>
+              </div>
+            </div>
+	    
+            <div class="module_menu">
+              <div>
+		<div>
+                  <div>
+                    <h3>Main Menu</h3>
+		    
+                    <ul class="menu">
+                      <li><a href="/ktuh/">
+			  <span>Home</span>
+			</a>
+		      </li>
+		      
+                      <li><a href="/ktuh/show_grid/">
+			  <span>Show Schedule</span>
+			</a>
+		      </li>
+		      
+                      <li><a href="/ktuh/anniversary/">
+			  <span>40th Anniversary</span>
+			</a>
+		      </li>
+		      
+                      <li><a href="/ktuh/staff/">
+			  <span>KTUH Staff</span>
+			</a>
+		      </li>
+                    </ul>
+                  </div>
+		</div>
+              </div>
+            </div>
+	    
+            <div class="module">
+              <div>
+		<div>
+                  <div>
+                    <h3>About KTUH</h3>
+		    
+                    <ul class="menu">
+                      <li><a href="/ktuh/faq/">
+			  <span>FAQs</span>
+			</a>
+		      </li>
+		      
+                      <li><a href="/ktuh/donate">
+			  <span>Donate to KTUH</span>
+			</a>
+		      </li>
+		      
+                      <li><a href="/ktuh/volunteer/">
+			  <span>Volunteer at KTUH</span>
+			</a>
+		      </li>
+		      
+                      <li><a href="/ktuh/history/">
+			  <span>KTUH History</span>
+			</a>
+		      </li>
+		      
+                      <li><a href="/ktuh/timeline">
+			  <span>KTUH Timeline</span>
+			</a>
+		      </li>
+		      
+                      <li><a href="/ktuh/underwriting">
+			  <span>Underwriting</span>
+			</a>
+		      </li>
+                    </ul>
+                  </div>
+		</div>
+              </div>
+            </div>
+            
+            <div style="width:140px;text-align:center;margin:0 auto;">
+              <table style="width:140px;text-align:left;" cellpadding="0" cellspacing="0">
+		<tr>
+                  <td>&nbsp;</td>
+		</tr>
+              </table>
+	      
+              <div class="f123_bg">
+		<table style="width:134px;height:30px;text-align:center;border:none;" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+		</table>
+              </div>
+            </div>
+          </div>
+          
+	  
+	  <div id="maincolumn_full">
+	    <div class="nopad">
+	      <table class="blog" cellpadding="0" cellspacing="0">
+		<tr>
+		  <td valign="top">
+		    <div>
+		      <table class="contentpaneopen">
+			<tr>
+			  <td valign="top" colspan="2">
+			    
+			    {% block content %}
+			    
+			    {% endblock content %}
+			  </td>
+			</tr>
+		      </table>
+		    </div>
+		  </td>
+		</tr>
+	      </table>
+	    </div>
+	  </div>
+	  
+          <div class="clr"></div>
+	</div>
+      </div><!-- /Wrapper --><!--footer start-->
+      
+      <div id="footer">
+	<div id="f123">
+          <div>
+            <div style="text-align: center; padding: 10px 0 0;">
+              KTUH - 90.3 - University of Hawaii Radio
+            </div>
+	    
+            <div style="padding: 5px 0; text-align: center; color: #829300;">Valid 
+	      <a style="color: #829300;" href="http://validator.w3.org/check/referer">XHTML</a> and
+              <a style="color: #829300;" href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>.
+            </div>
+          </div>
+	</div>
+      </div><!--footer end-->
+    </div>
+  </body>
+</html>

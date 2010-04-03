@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" > 
+<head>
+  <link rel="stylesheet" href="/media/css/ktuh.css" type="text/css" /> 
+  <link rel="stylesheet" href="/media/css/dropdown.css" type="text/css" /> 
+  <script src="/media/js/dropdown.js" type="text/javascript"></script>
+  <script src="/media/js/jquery.js" type="text/javascript"></script>
+</head>
+
+{% block title %}
+<title>Base Site</title>
+{% endblock %}
+
+<body>
+<!-- HEADER -->
+<div id="header">
+{% block header %}
+{% endblock %}
+</div>
+
+<!-- MENU -->
+<div id="menu">
+{% block menu %}
+<ul id="nav">
+  <li><a href="/ktuh/">Home</a></li>
+  <li><a href="/ktuh/show_grid">Shows</a>
+	 <ul>
+	  <li><a href="/ktuh/show_grid/16">Monday Night Live!</a></li>
+	 </ul>
+  </li>
+</ul>
+{% endblock %}
+</div>
+
+<!-- LEFT SECTION -->
+<div id="leftcol">
+Current Show: 
+{% for show in current_show %}
+{{ show.showgrid_dj.dj_current_show.show_name }} w/ 
+{{ show.showgrid_dj.dj_name }} <br/>
+{{ show.showgrid_dj.dj_current_show.show_blurb }}
+{% endfor %}
+</div>
+
+<!-- CONTENT -->
+<div id="content">
+{% block content %}
+{% endblock %}
+</div>
+
+<!-- FOOTER -->
+<div id="footer">
+2010 KTUH Honolulu -- <i>Created: 01/31/2010</i><br/>
+2445 Campus Road #203 Honolulu Hawai`i 96822 Office No. 808.956.5288 Studio No. 808.956.7261 
+<a href="mailto:webmaster@ktuh.org">webmaster@ktuh.org</a><br/>
+</div>
+
+</body>
+
+</html>
